@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> KoperasiKu</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxs-wallet-alt' style='color:#ffffff'  ></i>
+        <div class="logo_name">KoperasiKu</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="index.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="daftar.html">
+          <i class='bx bx-chat' ></i>
+          <span class="links_name">Daftar</span>
+        </a>
+        <span class="tooltip">Daftar</span>
+      </li>
+      <li>
+       <a href="anggota.html">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Anggota</span>
+       </a>
+       <span class="tooltip">Anggota</span>
+     </li>
+     <li>
+        <a href="pembayaran.html">
+          <i class='bx bx-cart-alt' ></i>
+          <span class="links_name">Pembayaran</span>
+        </a>
+        <span class="tooltip">Pembayaran</span>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+        <div class="text">Selamat Datang di KoperasiKu</div>
+            <div class="card">
+            <div class="card-header">
+                <h3>Created : Irwan Muji Handoko</h3>
+                <h3>Kelas   : S8I </h3>
+            </div>
+            <div class="card-body">
+                <button type="submit" class="btn-submit">Daftarkan Anggota Baru</button>
+            </div>
+            </div>
+        <div class="text">Anggota Terdaftar</div>
+        <div class="card">
+        <div class="card-header">
+            <h3>Data Anggota</h3>
+        </div>
+        <div class="card-body">
+            <table id="anggotaTable">
+            <thead>
+                <tr>
+                <th>No. Kartu</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Telepon</th>
+                <th>Email</th>
+                <th>Pinjaman</th>
+                <th>Kekurangan</th>
+                <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1234</td>
+                    <td>Irwan Muji Handoko</td>
+                    <td>Jakarta</td>
+                    <td>081234567890</td>
+                    <td>irwan.muji77@gmail.com</td>
+                    <td>5.000.000</td>
+                    <td>3.000.000</td>
+                    <td>
+                      <button class="status-button aktif">Aktif</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2345</td>
+                    <td>Handoko</td>
+                    <td>Bandung</td>
+                    <td>087654321098</td>
+                    <td>handoko@gmail.com</td>
+                    <td>3.000.000</td>
+                    <td>2.000.000</td>
+                    <td>
+                    <button class="status-button tidak-aktif">Tidak Aktif</button>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        </div>
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+</body>
+</html>

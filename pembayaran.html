@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> KoperasiKu</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxs-wallet-alt' style='color:#ffffff'  ></i>
+        <div class="logo_name">KoperasiKu</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <i class='bx bx-search' ></i>
+           <input type="text" placeholder="Search...">
+           <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="index.html">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+           <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="daftar.html">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Daftar</span>
+          </a>
+          <span class="tooltip">Daftar</span>
+        </li>
+        <li>
+         <a href="anggota.html">
+           <i class='bx bx-user' ></i>
+           <span class="links_name">Anggota</span>
+         </a>
+         <span class="tooltip">Anggota</span>
+       </li>
+       <li>
+          <a href="pembayaran.html">
+            <i class='bx bx-cart-alt' ></i>
+            <span class="links_name">Pembayaran</span>
+          </a>
+          <span class="tooltip">Pembayaran</span>
+        </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="text">Pembayaran</div>
+    <div class="card">
+      <div class="card-header">
+        <h3>Detail Pembayaran</h3>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama">
+          </div>
+          <div class="form-group">
+            <label for="nomor-kartu">Nomor Kartu:</label>
+            <input type="text" id="nomor-kartu" name="nomor-kartu" placeholder="Masukkan nomor kartu">
+          </div>
+          <div class="form-group">
+            <label for="tanggal-expiry">Tanggal Pembayaran:</label>
+            <input type="text" id="tanggal-expiry" name="tanggal-expiry" placeholder="DD/MM/YY">
+          </div>
+          <div class="form-group">
+            <label for="cvv">Jumlah:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="Masukkan Jumlah Pembayaran">
+          </div>
+          <button type="submit" class="btn-submit">Bayar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+<script>
+let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+ }
+}
+</script>
+</body>
+</html>
